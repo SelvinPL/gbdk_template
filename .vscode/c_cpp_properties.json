@@ -1,0 +1,90 @@
+{
+	"env": {
+		"commonIncludePath": [
+			"${env:GBDK_HOME}/include",
+			"${workspaceFolder}/include"
+		],
+		"commonDefines" : [
+			"__critical="
+		]
+	},
+	"configurations": [
+		{
+			"name": "GBC",
+			"defines": [
+				"${commonDefines}",
+				"__TARGET_gb",
+				"__PORT_sm83"
+			],
+			"includePath": [
+				"${commonIncludePath}",
+				"${workspaceFolder}/obj/gbc"
+			],
+			"customConfigurationVariables": {
+				"ext": "gbc"
+			}
+		},
+		{
+			"name": "SMS",
+			"defines": [
+				"${commonDefines}",
+				"__TARGET_sms",
+				"__PORT_z80"
+			],
+			"includePath": [
+				"${commonIncludePath}",
+				"${workspaceFolder}/obj/sms"
+			],
+			"customConfigurationVariables": {
+				"ext": "sms"
+			}
+		},
+		{
+			"name": "GG",
+			"defines": [
+				"${commonDefines}",
+				"__TARGET_gg",
+				"__PORT_z80"
+			],
+			"includePath": [
+				"${commonIncludePath}",
+				"${workspaceFolder}/obj/gg"
+			],
+			"customConfigurationVariables": {
+				"ext": "gg"
+			}
+		},
+		{
+			"name": "GB",
+			"defines": [
+				"${commonDefines}",
+				"__TARGET_gb",
+				"__PORT_sm83"
+			],
+			"includePath": [
+				"${commonIncludePath}",
+				"${workspaceFolder}/obj/gb"
+			],
+			"customConfigurationVariables": {
+				"ext": "gb"
+			}
+		},
+		{
+			"name": "NES",
+			"defines": [
+				"${commonDefines}",
+				"__TARGET_nes",
+				"__PORT_mos6502"
+			],
+			"includePath": [
+				"${commonIncludePath}",
+				"${workspaceFolder}/obj/nes"
+			],
+			"customConfigurationVariables": {
+				"ext": "nes"
+			}
+		}
+	],
+	"version": 4,
+	"enableConfigurationSquiggles": true
+}

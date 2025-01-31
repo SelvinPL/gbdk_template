@@ -1,0 +1,31 @@
+{	
+	"tasks": 
+	[
+		{
+			"label": "Make",
+			"type": "shell",
+			"command": "make",
+			"args": [
+				"${input:ext}",
+				"DEBUG=1"
+			],
+			"group":  {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"reveal": "always",
+				"showReuseMessage": false
+			},
+			"problemMatcher": "$msCompile"
+		}
+	],
+	"inputs": [
+        {
+            "id": "ext",
+            "type": "command",
+            "command": "cpptools.activeConfigCustomVariable",
+            "args": "ext"
+        }
+    ]
+}

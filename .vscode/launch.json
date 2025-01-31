@@ -1,0 +1,33 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "emulicious-debugger",
+			"request": "launch", 
+			"emuliciousPath": "${env:EMULICIOUS_PATH}",
+			"name": "Debug",
+			"program": "${workspaceFolder}/build/${input:ext}/${workspaceFolderBasename}.${input:ext}",
+			"additionalSrcFolders": "${workspaceFolder}/obj/${input:ext};${workspaceFolder}/src",
+			"port": 58870,
+			"stopOnEntry": false,
+			"preLaunchTask": "Make"
+		},
+		{
+			/*bad solution but it works*/
+			"request": "launch", 
+			"type" : "cppvsdbg",
+			"name": "Run with Mesen2",
+			"program": "${env:MESEN_PATH}",
+			"args": ["${workspaceFolder}/build/${input:ext}/${workspaceFolderBasename}.${input:ext}"],
+			"preLaunchTask": "Make"
+		}
+	],
+	"inputs": [
+        {
+            "id": "ext",
+            "type": "command",
+            "command": "cpptools.activeConfigCustomVariable",
+            "args": "ext"
+        }
+    ]
+}
